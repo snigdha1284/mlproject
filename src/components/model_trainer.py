@@ -49,28 +49,36 @@ class ModelTrainer:
 
             params = {
                 "Random Forest": {
-                    'n_estimators': [100, 200]
+                    'n_estimators': [8,16,32,64,128,256]
+
                 },
                 "Decision Tree": {
+                    'criterion':['squared_error','friedman_mse','absolute_error','poisson'],
                     'max_depth': [3, 5]
                 },
                 "Gradient Boosting": {
+                    'learning_rate': [.1, .01, .05, .001],
+                    'subsample': [0.6, 0.7, 0.75, 0.8, 0.85, 0.9],
                     'n_estimators': [100, 200]
                 },
                 "AdaBoost Classifier": {
-                    'n_estimators': [50, 100]
+                    'learning_rate': [.1, .01, 0.5, .001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
-                "XGBClassifier": {
-                    'n_estimators': [100, 200]
+                "XGBRegressor": {
+                    'learning_rate': [.1, .01, .05, .001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256]
                 },
-                "CatBoosting Classifier": {
-                    'iterations': [100, 200]
+                "CatBoosting Regressor": {
+                    'depth': [6, 8, 10],
+                    'learning_rate': [.1, .01, .05, .001],
+                    'iterations': [30, 50, 100]
                 },
                 "Logistic Regression": {
                     'max_iter': [100, 200]
                 },
-                "K-Neighbors Classifier": {
-                    'n_neighbors': [3, 5]
+                "K-Neighbors Regressor": {
+                    'n_neighbors': [5,7,9,11]
                 },
             }
 
